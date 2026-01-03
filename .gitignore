@@ -1,0 +1,76 @@
+# -----------------------
+# Python
+# -----------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environment
+venv/
+.env
+.venv/
+
+# Byte-compiled
+*.egg-info/
+*.egg
+
+# -----------------------
+# SQLite DB
+# -----------------------
+*.db
+*.sqlite3
+
+# -----------------------
+# Logs
+# -----------------------
+*.log
+logs/
+logging/
+
+# -----------------------
+# IDE / Editors
+# -----------------------
+.vscode/
+.idea/
+*.iml
+
+# -----------------------
+# OS files
+# -----------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------
+# Environment files
+# -----------------------
+.env.local
+.env.production
+.env.development
+.envrc
+
+# -----------------------
+# Cache folders
+# -----------------------
+.cache/
+.pytest_cache/
+coverage/
+
+# -----------------------
+# Node
+# -----------------------
+node_modules/
+dist/
+build/
+
+# -----------------------
+# MCP client/server artifacts
+# -----------------------
+*.jsonl
+.mcp/
+
+# -----------------------
+# Uvicorn reload cache
+# -----------------------
+*.pid

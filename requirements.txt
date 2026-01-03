@@ -1,0 +1,10 @@
+
+fastapi
+uvicorn
+sqlmodel
+passlib[bcrypt]
+python-jose[cryptography]
+python-dotenv
+sqlalchemy
+python-telegram-bot
+httpx

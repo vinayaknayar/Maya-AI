@@ -4,6 +4,7 @@ from .auth import router as auth_router
 from .models import Task
 from .tools import router as tools_router
 from .agent.routes import router as agent_router
+from contextlib import asynccontextmanager
 
 
 ####
@@ -13,12 +14,15 @@ from .agent.routes import router as agent_router
 #Adds /healthz endpoint
 ####
 
-app = FastAPI(title="Maya MCP Server")
-
-
-@app.on_event("startup")
-def on_startup():
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     init_db()
+    yield
+
+app = FastAPI(
+    title="Maya MCP Server",
+    lifespan=lifespan
+)
 
 
 # Routers
@@ -29,5 +33,3 @@ app.include_router(agent_router)
 @app.get("/healthz")
 def health():
     return {"status": "ok"}
-
-
